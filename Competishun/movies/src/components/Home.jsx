@@ -1,30 +1,62 @@
 import React, { useEffect, useState } from "react";
 import "../style/Home.css";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa"
 import { BsFillStopwatchFill } from "react-icons/bs"
 
 const Home = () => {
   const [data, setData] = useState("");
+  const imageUrl = "https://image.tmdb.org/t/p/w500";
 
-  const getData = () => {
-    axios("http://localhost:3001/movie").then((res) => {
-      setData(res.data);
-      // console.log(res.data);
-    });
-  };
+ 
 
 
-  const handleFav =(id)=>{
+// const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
+
+const getData = ()=>{
+  // const fetch = require('node-fetch');
+
+const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MTk2N2I5YjEzODBiNGI3OGRiZjMxZjQzZjIwZDc5YSIsInN1YiI6IjY1NzcxNzhlNTY0ZWM3MDBlMTBjN2E0NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z0pvJDTsAWuBcZZaPoWI2I1D5neXD5fq3g92eIn_rSM'
+  }
+};
+
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => {
+    setData(json.results);
+    console.log(json.results)
+  })
+  .catch(err => console.error('error:' + err));
+
+  }
+
+
+  let favData =  JSON.parse(sessionStorage.getItem("fav")) || [];
+  let WatchData =  JSON.parse(sessionStorage.getItem("watch")) || [];
+
+
+  const handleFav =(ele)=>{
+    // console.log(ele);
        alert("Movie Added to Favourite.")
-       localStorage.setItem("fav",id)
+       favData.push(ele);
+       sessionStorage.setItem("fav",JSON.stringify(favData));
   } 
 
 
-  const handleWatchlist =()=>{
-       alert("Movie Added to Watchlist.")
+  const handleWatchlist =(ele)=>{
+       alert("Movie Added to Watchlist.");
+       WatchData.push(ele);
+       sessionStorage.setItem("watch",JSON.stringify(WatchData));
   } 
+
+  const handleImage = (mov) =>{
+    sessionStorage.setItem("movieDetail",JSON.stringify(mov))
+  }
 
   useEffect(() => {
     getData();
@@ -45,10 +77,12 @@ const Home = () => {
         {data.length > 0 &&
           data.map((ele) => (
           <div className="card" key={ele.id}>
-            <Link><img src={ele.image} alt={ele.image} /></Link>
-            <h3>{ele.name}</h3>
-            <p>{ele.category}</p>
-            <div className="icon-section"><BsFillStopwatchFill size={25} onClick={handleWatchlist}/> <FaRegHeart size={25} onClick={()=>handleFav(ele.id)}/></div>
+            <div className="topIcon">
+            <BsFillStopwatchFill size={25} onClick={()=>handleWatchlist(ele)}/> <FaRegHeart size={25} onClick={()=>handleFav(ele)}/>
+            </div>
+            <Link to={`/home/${ele.id}`} onClick={()=>handleImage(ele)}><img src={`${imageUrl}${ele.poster_path}`} /></Link>
+            <h3>{ele.title}</h3>
+            <p>{ele.release_date}</p>
           </div>
           ))}
       </div>
