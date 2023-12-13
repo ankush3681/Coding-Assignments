@@ -1,0 +1,115 @@
+{
+  "hotel": [
+    { 
+      "id": 1,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/207757/large/419af0a86ed934ad.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/207757/large/30189080565fc239.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/207757/large/4642cee1cb6296d0.jpg",
+      "name":"RV Park Nixon",
+      "city":"Ranchi",
+      "star":"3",
+      "rating":"4.2",
+      "review":["good hospitality","good service"]
+    },
+    {
+      "id": 2,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/204683/large/9cddff9cd431ae4f.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/204683/large/e3cbeb77d527b866.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/204683/large/d1cad0dec2470a7c.jpg",
+      "name":"Lasagna",
+      "city":"Mexico",
+      "star":"7",
+      "rating":"3.2",
+      "review":["not worth money","nice view from top"]
+    },
+    {
+      "id": 3,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/105125/large/cca2d009110b45d5.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/105125/large/1be8566c3a801988.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/105125/large/1a93e2b7991a48ac.jpg",
+      "name":"Royal Palace",
+      "city":"Delhi",
+      "star":"3",
+      "rating":"4.3",
+      "review":["great staff","best indian Thali"]
+    },
+    {
+      "id": 4,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/105482/large/1c5e017cb2737223.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/105482/large/c6ce4002d7c656c7.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/105482/medium/7777997a37910894.jpg",
+      "name":"Mocambo",
+      "city":"Sydney",
+      "star":"5",
+      "rating":"3.5",
+      "review":["small was bad","good balcony view"]
+    },
+    {
+      "id": 5,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/106843/large/b02f87ed669c363c.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/106843/large/5685441711125cc1.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/106843/large/40dc484b124148f6.jpg",
+      "name":"Saahi Mahal",
+      "city":"Jaipur",
+      "star":"5",
+      "rating":"4.9",
+      "review":["best hotel destination","good lake view"]
+    },
+    {
+      "id": 6,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/44060/large/eb14c33f56459da8.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/44060/large/b6e3bd1af695cedb.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/44060/large/b26d3e943bbe6bd3.jpg",
+      "name":"Cedial Royal",
+      "city":"Johansburg",
+      "star":"3",
+      "rating":"1.9",
+      "review":["waste of money","poor hospitality"]
+    },
+    {
+      "id": 7,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/55105/large/60983015b6ca566f.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/55105/large/293930107a6596d6.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/55105/large/d6c06eff511a413d.jpg",
+      "name":"Turanto",
+      "city":"Bangalore",
+      "star":"2",
+      "rating":"2.6",
+      "review":["bad staff","poor infrastructure"]
+    },
+    {
+      "id": 8,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/48922/large/73853c126e6d2dae.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/48922/large/3e17cbc0544e3a0d.JPG",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/48922/large/8da5587aea4cdee5.JPG",
+      "name":"Taj",
+      "city":"Mumbai",
+      "star":"2",
+      "rating":"4.8",
+      "review":["Good Staff Behavior","good Lunch service"]
+    },
+    {
+      "id": 9,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/50539/large/d54296d5c6327066.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/50539/large/8994d572be3c29f5.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/50539/large/e1de1087abbb1446.jpg",
+      "name":"Credum",
+      "city":"New York",
+      "star":"4",
+      "rating":"4.7",
+      "review":["good backyard","good breakfast"]
+    },
+    {
+      "id": 10,
+      "image1":"https://images.oyoroomscdn.com/uploads/hotel_image/87434/large/c07e69fdfaec3e47.jpg",
+      "image2":"https://images.oyoroomscdn.com/uploads/hotel_image/87434/large/969b7d40952f80ab.jpg",
+      "image3":"https://images.oyoroomscdn.com/uploads/hotel_image/87434/large/71486301bf3741d6.jpg",
+      "name":"TownShip",
+      "city":"Toranto",
+      "star":"5",
+      "rating":"3.2",
+      "review":["good service","bad staff behavior"]
+    }
+  ]
+}
+
