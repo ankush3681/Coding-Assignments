@@ -3,6 +3,7 @@ import "../style/Home.css";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa"
 import { BsFillStopwatchFill } from "react-icons/bs"
+import Navbar from "./Navbar";
 
 const Home = () => {
   const [data, setData] = useState("");
@@ -64,6 +65,7 @@ fetch(url, options)
 
   return (
     <>
+    <Navbar/>
       <div className="movie-top">
         <h1>Movies</h1>
         <input

@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import "../style/Navbar.css";
+import { signOut } from 'firebase/auth'
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { auth } from '../firebase';
 
 const Navbar = () => {
     const [click,setClick] = useState(false);
+    const navigate = useNavigate();
 
-    const handleLogout = () =>{
-         
+    const handleLogout = async () =>{
+      signOut(auth);
+      navigate("/")
+      alert("Logout Sucessfully!")
     }
 
     const handleClick = () =>{

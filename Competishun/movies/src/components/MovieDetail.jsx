@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/MovieDetail.css";
+import Navbar from './Navbar';
 
 const MovieDetail = () => {
 
@@ -13,6 +14,8 @@ const MovieDetail = () => {
 
     // console.log(data);
   return (
+    <>
+    <Navbar/>
     <div>
       <h1 className='md-h1'>Movie Detail Page</h1>
       <div className="movie-card">
@@ -30,6 +33,7 @@ const MovieDetail = () => {
             </div>
             </div>
     </div>
+    </>
   )
 }
 

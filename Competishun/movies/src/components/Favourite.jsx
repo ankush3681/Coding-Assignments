@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../style/Favourite.css";
+import Navbar from './Navbar';
 
 const Favourite = () => {
 
@@ -9,6 +10,8 @@ const Favourite = () => {
 
   const favorite = JSON.parse(sessionStorage.getItem("fav")) ||[];
   return (
+    <>
+    <Navbar/>
     <div>
       <h1 className='h1'>Your Favourite Movies</h1>
       <div className="fav-container">
@@ -22,6 +25,7 @@ const Favourite = () => {
           ))}
       </div>
     </div>
+    </>
   )
 }
 

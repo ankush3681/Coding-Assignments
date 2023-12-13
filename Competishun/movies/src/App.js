@@ -6,12 +6,14 @@ import { Route, Routes } from 'react-router-dom';
 import Favourite from './components/Favourite';
 import Watchlist from './components/Watchlist';
 import MovieDetail from './components/MovieDetail';
+import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Routes>
+        <Route path="/" element={<Login/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/favorite" element={<Favourite/>}/>
         <Route path="/watchlist" element={<Watchlist/>}/>
