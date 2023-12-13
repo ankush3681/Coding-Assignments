@@ -34,7 +34,7 @@ const handleImageClick = (index,e) => {
 
 
   const handleCLick = () => {
-    alert("Hotel has been added to your wishlist!");
+    alert("Your booking has been confirmed");
   };
 
   useEffect(() => {
