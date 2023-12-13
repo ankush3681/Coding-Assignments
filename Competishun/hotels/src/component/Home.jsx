@@ -4,10 +4,15 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import RatingCircle from "./RatingCircle";
+import { FaStar } from "react-icons/fa";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCard, setSelectedCard] = useState(null);
+
+
 
   const getData = () => {
     axios.get("https://precious-cyan-barnacle.cyclic.app/hotel").then((res) => {
@@ -15,6 +20,18 @@ const Home = () => {
       setData(res.data);
     });
   };
+
+  const filteredData = data.filter((hotel) =>
+  hotel.name.toLowerCase().includes(searchQuery.toLowerCase())
+);
+
+
+const handleImageClick = (index,e) => {
+  if (e.target.tagName.toLowerCase() !== 'button') {
+    setSelectedCard((prevIndex) => (prevIndex === index ? null : index));
+  }
+};
+
 
   const handleCLick = () => {
     alert("Hotel has been added to your wishlist!");
@@ -33,13 +50,17 @@ const Home = () => {
     <div>
       <h1>Competishun Hotels</h1>
       <div className="input">
-        <input type="text" placeholder="Search for Hotels..." />
+        <input 
+         type="text"
+         placeholder="Search for Hotels..."
+         value={searchQuery}
+         onChange={(e) => setSearchQuery(e.target.value)}/>
       </div>
       <div className="container">
-        {data.map((ele) => (
-          <div className="cards" key={ele.id}>
+        {filteredData.map((ele,index) => (
+          <div className="cards" key={ele.id} onClick={(e)=>handleImageClick(index,e)}>
             <div className="imgDiv">
-              <img src={ele[`image${currentImageIndex + 1}`]} alt={ele.name} />
+              <img src={ele[`image${currentImageIndex + 1}`]} alt={ele.name}  />
             </div>
             <div className="detailDiv">
               <h3>
@@ -52,12 +73,20 @@ const Home = () => {
               </p>
               <p>
                 <span>Star : </span>
-                {ele.star}
+                {ele.star} <FaStar color="blueviolet"/>
               </p>
               <p className="bar">
                 <span>Rating : </span>
                 <RatingCircle rating={ele.rating} className="circular-bar" />
               </p>
+              {selectedCard === index && (
+                <p>
+                  <span>Reviews: </span>
+                  {ele.review.map((review, i) => (
+                    <span key={i}>{review}, </span>
+                  ))}
+                </p>
+              )}
               <button onClick={handleCLick}>Book Now</button>
             </div>
           </div>
