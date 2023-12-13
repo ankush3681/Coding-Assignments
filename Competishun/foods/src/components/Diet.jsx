@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Calorie.css";
+import "../style/Diet.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import RatingCircle from "./RatingCircle";
@@ -7,19 +7,18 @@ import { FadeLoader } from "react-spinners";
 import axios from "axios";
 import Navbar from "./Navbar";
 
-const Home = () => {
+const Diet = () => {
   const [data, setData] = useState([]);
-  const [min, setMin] = useState(1);
-  const [max, setMax] = useState(100);
+  const [diet, setDiet] = useState("balanced");
   const [loading, setLoading] = useState(false);
-  const [submit,setSubmit] = useState(false);
+
 
   const getData = () => {
     setLoading(true);
 
     axios
       .get(
-        `https://api.edamam.com/api/recipes/v2?type=public&app_id=793d7a17&app_key=d10f184dffb9682c340f8073166551e8&calories=${min}-${max}`
+        `https://api.edamam.com/api/recipes/v2?type=public&app_id=793d7a17&app_key=d10f184dffb9682c340f8073166551e8&diet=${diet}`
       )
       .then((res) => {
         // console.log(res.data.hits)
@@ -30,13 +29,12 @@ const Home = () => {
       });
   };
 
-  const handleSearch = () =>{
-    if(min<1){
-        alert("Minimum value cannot be less than 1!");
-    }else{
-      setSubmit(!submit);
-    }
-}
+
+
+  const handleChange = (e) => {
+    // console.log(e.target.value);
+    setDiet(e.target.value);
+  };
 
   const handleCLick = () => {
     alert("Order Placed");
@@ -44,20 +42,22 @@ const Home = () => {
 
   useEffect(() => {
     getData();
-  }, [submit]);
+  }, [diet]);
 
   return (
     <>
       <Navbar />
       <div className="main-div">
-        <h1>Foods by Calorie</h1>
-
-        <div className="calorie-input">
-          <p>
-            <input type="number" placeholder="Minimum" min="1" max="1000" onChange={(e)=>setMin(e.target.value)}/>
-            <input type="number" placeholder="Maximum" min="10" max="2000" onChange={(e)=>setMax(e.target.value)}/>
-            <button onClick={handleSearch}>Search</button>
-          </p>
+        <h1>Diet Plans</h1>
+        <div>
+          <select onChange={(e) => handleChange(e)}  className="diet-select-input">
+            <option value="balanced">Balanced</option>
+            <option value="high-fiber">High-Fiber</option>
+            <option value="high-protein">High-Protein</option>
+            <option value="low-carb">Low-Carb</option>
+            <option value="low-fat">Low-Fat</option>
+            <option value="low-sodium">Low-Sodium</option>
+          </select>
         </div>
 
         <div className="container">
@@ -95,4 +95,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Diet;

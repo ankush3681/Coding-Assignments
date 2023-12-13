@@ -32,6 +32,4 @@ const Login = () => {
 export default Login;
 
 
-{/* <div className="calorie-input">
-<p>Enter your calories: <input type="number" placeholder="Minimum"/><input type="number" placeholder="Maximum"/></p>
-</div> */}
+ 

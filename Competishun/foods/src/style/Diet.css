@@ -30,26 +30,12 @@ h1{
     color:blueviolet;
 }
 
-.calorie-input button{
-    font-size: 15px;
-    background-color: blueviolet;
-    border:0;
-    color:white;
-    padding:3px 8px;
-    border-radius: 5px;
-    margin-left: 10px;
-    border:1px solid black;
-    cursor: pointer;
+.diet-select-input{
+    width:350px;
+    padding:5px 20px;
+    border-radius: 10px;
+    font-size: 17px;
 }
-
-.calorie-input input{
-    width:75px;
-    margin-left: 5px;
-    border-radius: 5px;
-    border:1px solid grey;
-    padding:3px 0 3px 3px;
-}
-
 
 
 .cards{
@@ -132,14 +118,17 @@ h1{
         height:500px;
     }
 
-    .input input{
-        width:250px;
-    }
+
+   
 }
 
 @media (max-width:450px){
     .container{
         grid-template-columns: 300px;
         justify-content: center;
+    }
+
+    .diet-select-input{
+        width:240px;
     }
 }
