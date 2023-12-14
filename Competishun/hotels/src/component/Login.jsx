@@ -1,7 +1,7 @@
 import { signInWithPopup } from 'firebase/auth';
 import React from 'react'
 import { auth, googleAuthProvider } from '../firebase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../styles/Login.css";
 import { FcGoogle } from "react-icons/fc";
 
@@ -21,8 +21,10 @@ const Login = () => {
   return (
     <div className='login-container'>
        <div className='login-box'>
-        <h1>SignIn Here</h1>
-        <button onClick={handleClick}><FcGoogle size={35}/> SignIn With Google</button>
+        <h1>Sign-In Here</h1>
+        <p>Sign-In Here with google</p>
+        <button onClick={handleClick}><FcGoogle size={35} className='googleIcon'/> SignIn With Google</button>
+        <p>Don't have an account? <Link className='signup'>SignUp</Link></p>
        </div>
     </div>
   )
