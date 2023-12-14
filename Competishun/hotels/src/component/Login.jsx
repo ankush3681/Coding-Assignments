@@ -21,9 +21,9 @@ const Login = () => {
   return (
     <div className='login-container'>
        <div className='login-box'>
-        <h1>Sign-In Here</h1>
-        <p>Sign-In Here with google</p>
-        <button onClick={handleClick}><FcGoogle size={35} className='googleIcon'/> SignIn With Google</button>
+        <h1>Sign In Here</h1>
+        <p>Sign In Here with google</p>
+        <button onClick={handleClick}><FcGoogle size={35} className='googleIcon'/> Sign In With Google</button>
         <p>Don't have an account? <Link className='signup'>SignUp</Link></p>
        </div>
     </div>
